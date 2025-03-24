@@ -1,0 +1,10 @@
+[
+  {
+    "to": "tracikinney@kozgene.com",
+    "data": {
+      "name": "Corinaa",
+      "reset_link": "<a>Reset Password</a>",
+      "company": "JOVIOLD"
+    },
+    "template_name": "subscription_email"
+  

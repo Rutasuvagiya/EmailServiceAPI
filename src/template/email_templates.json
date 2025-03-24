@@ -1,0 +1,14 @@
+{
+    "welcome_email": {
+        "subject": "Welcome, {{name}}!",
+        "body": "<h1>Hello {{name}},</h1><p>Welcome to our platform. We're glad to have you!</p>"
+    },
+    "password_reset": {
+        "subject": "Reset Your Password, {{name}}",
+        "body": "<p>Hi {{name}},</p><p>Click <a href='{{reset_link}}'>here</a> to reset your password.</p>"
+    },
+    "subscription_email": {
+        "subject": "Thank you for subscription, {{name}}",
+        "body": "<p>Hi {{name}},</p><p>Thank you for subscribing to {{company}}! Please check your email for confirmation.</p>"
+    }
+}
