@@ -71,6 +71,7 @@ class EmailTemplateManager
         // Replace placeholders in subject & body
         $subject = $this->replacePlaceholders($template['subject'], $data);
         $body = $this->replacePlaceholders($template['body'], $data);
+
         return ['subject' => $subject, 'body' => $body];
     }
 
@@ -87,6 +88,7 @@ class EmailTemplateManager
         foreach ($data as $key => $value) {
             $content = str_replace("{{" . $key . "}}", htmlspecialchars($value, ENT_QUOTES, 'UTF-8'), $content);
         }
+
         return $content;
     }
 }

@@ -52,10 +52,10 @@ composer install
 
 ## Set Cron/Run file to send Emails
 
-sendMailCron.php file must be run in background to send emails which are in queue.  
-One crom sends around 750 emails per second. Run multiple crons in background if you want to send bulk mails for faster performance.
+sendMailCron.php file must be run in background to send emails which are in queue. One cron sends around 750 emails per second.  
+Run multiple crons in background if you want to send bulk mails for faster performance.
 1. Run Command prompt  
-2. Run command
+2. Run Command
 ```bash
 php <EmailService path>\src\sendMailCron.php
 ```

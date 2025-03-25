@@ -55,6 +55,7 @@ abstract class JsonProcessor
         // If json_decode failed, the JSON is invalid.
         if (!is_array($decoded)) {
             throw new Exception('Invalid JSON data.', 400);
+
             return false;
         } else {
             return true;

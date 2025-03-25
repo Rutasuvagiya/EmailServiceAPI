@@ -36,6 +36,7 @@ $emailService = new ProviderManager($strategy, $templateManager);
 
 //Make infinite loop to
 while (true) {
+
     // Fetch an email task from the queue
     $emailData = $redis->lpop('email_queue');
 
@@ -44,6 +45,7 @@ while (true) {
         $emailData = json_decode($emailData, true);
 
         try {
+
             // Validate Request
             if (!isset($emailData['template_name'], $emailData['to'], $emailData['data'])) {
                 http_response_code(400);
