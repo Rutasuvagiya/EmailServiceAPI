@@ -160,4 +160,10 @@ class CronTest extends TestCase
         $template = new EmailTemplateManager();
         $template->renderTemplate('test', []);
     }
+
+    public function testInvalidTemplateInMail()
+    {
+        $this->assertFalse($this->providerManager->sendEmail("user@example.com", ['name' => 'Corine'], "invalid"));
+    
+    }
 }

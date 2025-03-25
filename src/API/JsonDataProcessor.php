@@ -12,6 +12,7 @@
 namespace App\API;
 
 use App\API\JsonProcessor;
+use Exception;
 
 /**
  * Class JsonDataProcessor

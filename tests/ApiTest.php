@@ -10,6 +10,8 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
+use App\API\JsonProcessorFactory;
+use Exception;
 
 class ApiTest extends TestCase
 {
@@ -114,5 +116,12 @@ class ApiTest extends TestCase
         $data = json_decode($response->getBody(), true);
         $this->assertArrayHasKey('error', $data);
         $this->assertEquals('Invalid JSON data.', $data['error']);
+    }
+
+    public function testJsonProcessorFactoryException()
+    {
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage('Invalid input type.');
+        JsonProcessorFactory::create('invalid');
     }
 }

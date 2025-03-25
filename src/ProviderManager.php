@@ -59,9 +59,10 @@ class ProviderManager
 
         try {
             //Retrieves the content of a specified email template.
-            $template = $this->templateManager->renderTemplate($templateName, $data);
+             $template = $this->templateManager->renderTemplate($templateName, $data);
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage() . "\n";
+            return false;
         }
 
         /* Loop untill max limit reach per email
