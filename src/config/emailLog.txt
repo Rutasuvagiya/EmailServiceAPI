@@ -20012,3 +20012,14 @@
 2025-03-25 10:38:09 : Thank you for subscription, Corinaa mail sent via mailgun
 2025-03-25 10:38:09 : Welcome, Hollie! mail sent via smtp
 2025-03-25 10:38:09 : Reset Your Password, Elisabeth mail sent via sendgrid
+2025-03-25 11:11:48 : Welcome, Test User! mail sent via sendgrid
+2025-03-25 11:13:02 : Welcome, Test User! mail sent failed with max retries
+2025-03-25 11:13:08 : Welcome, Test User! mail sent failed with max retries
+2025-03-25 11:13:11 : Welcome, Test User! mail sent failed with max retries
+2025-03-25 11:13:37 : Welcome, Test User! mail sent via smtp
+2025-03-25 11:15:18 : Welcome, Test User! mail sent via sendgrid
+2025-03-25 11:23:55 : Welcome, Test User! mail sent failed with max retries
+2025-03-25 11:24:34 : Welcome, Test User! mail sent via sendgrid
+2025-03-25 11:24:49 : Welcome, Test User! mail sent failed with max retries
+2025-03-25 11:24:59 : Welcome, Test User! mail sent via mailgun
+2025-03-25 11:26:24 : Welcome, Test User! mail sent via sendgrid

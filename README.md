@@ -135,10 +135,25 @@ Open file \src\template\email_template.json file.
 Add new template with dynamic variables defined in {{variable}} with following structure
 
 ```bash
-"subscription_email": {
-        "subject": "Thank you for subscription, {{name}}",
-        "body": "<p>Hi {{name}},</p><p>Thank you for subscribing to {{company}}! Please check your email for confirmation.</p>"
+"welcome_email": {
+        "subject": "Welcome, {{name}}!",
+        "body": "<p>Dear {{name}},</p><p>Welcome to Our Service! We are excited to have you on board.</p><p>Your company name is: <strong>{{company}}</strong></p><p>Feel free to explore and let us know if you have any questions.</p><p>Best regards,<br> The Team</p>"
     }
+```
+
+Output of this template wil be like below with update name and company name.
+
+```bash
+Dear Test User,
+
+Welcome to Our Service! We are excited to have you on board.
+
+Your company name is: **ABC Pvt. Ltd.**
+
+Feel free to explore and let us know if you have any questions.
+
+Best regards,
+The Team
 ```
 
 ## Running the unit tests

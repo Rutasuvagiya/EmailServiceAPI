@@ -1,7 +1,7 @@
 {
     "welcome_email": {
         "subject": "Welcome, {{name}}!",
-        "body": "<h1>Hello {{name}},</h1><p>Welcome to our platform. We're glad to have you!</p>"
+        "body": "<p>Dear {{name}},</p><p>Welcome to Our Service! We are excited to have you on board.</p><p>Your company name is: <strong>{{company}}</strong></p><p>Feel free to explore and let us know if you have any questions.</p><p>Best regards,<br> The Team</p>"
     },
     "password_reset": {
         "subject": "Reset Your Password, {{name}}",
