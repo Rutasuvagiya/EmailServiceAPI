@@ -51,6 +51,7 @@ abstract class JsonProcessor
     {
         // Attempt to decode the incoming RAW post data from JSON.
         $decoded = json_decode($jsonData, true);
+
         // If json_decode failed, the JSON is invalid.
         if (!is_array($decoded)) {
             throw new Exception('Invalid JSON data.', 400);

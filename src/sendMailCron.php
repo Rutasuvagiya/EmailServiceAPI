@@ -15,7 +15,7 @@
 set_time_limit(0);
 
 require __DIR__ . '/../vendor/autoload.php';
-require 'files/providerList.php';
+require __DIR__ . '/config/providerList.php';
 
 use Predis\Client;
 use App\ProviderManager;
@@ -30,6 +30,7 @@ echo "Worker started. Waiting for email tasks...\n";
 // Inject providers into RoundRobinStrategy
 $strategy = new RoundRobinStrategy($providers);
 $templateManager = new EmailTemplateManager();
+
 // Inject strategy and templateManager object into ProviderManager
 $emailService = new ProviderManager($strategy, $templateManager);
 

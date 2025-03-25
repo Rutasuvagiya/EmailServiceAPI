@@ -59,7 +59,7 @@ class ApiTest extends TestCase
     public function testFileUpload()
     {
         // Path to the file you want to upload
-        $filePath = __DIR__ . '/phpUnit.json';
+        $filePath = __DIR__ . '/files/validEmailData.json';
 
         // Ensure the file exists
         $this->assertFileExists($filePath);
@@ -81,7 +81,7 @@ class ApiTest extends TestCase
     public function testInvalidFileUpload()
     {
         // Path to the file you want to upload
-        $filePath = __DIR__ . '/invalid.txt';
+        $filePath = __DIR__ . '/files/invalid.json';
 
         // Ensure the file exists
         $this->assertFileExists($filePath);
@@ -99,6 +99,20 @@ class ApiTest extends TestCase
         // Assert the request was successful
         $this->assertEquals(400, $response->getStatusCode());
         $data = json_decode($response->getBody(), true);
+        $this->assertEquals('Invalid JSON data.', $data['error']);
+    }
+
+    public function testInvalidJson()
+    {
+         // Sending an invalid JSON payload
+         $response = $this->client->request('POST', 'sendEmail.php', [
+            'headers' => ['Content-Type' => 'application/json'],
+            'body'    => '{"invalid": "json", "missing_end"' // Deliberately broken JSON
+        ]);
+
+        $this->assertEquals(400, $response->getStatusCode());
+        $data = json_decode($response->getBody(), true);
+        $this->assertArrayHasKey('error', $data);
         $this->assertEquals('Invalid JSON data.', $data['error']);
     }
 }

@@ -56,8 +56,8 @@ class EmailTemplateManager
     /**
      * Renders the email template by replacing placeholders with actual data.
      *
-     * @param string $name template name.
-     * @param array $data Associative array of data to replace in the template.
+     * @param string $name Template name.
+     * @param array  $data Associative array of data to replace in the template.
      *
      * @return array subject of array and The rendered template with placeholders replaced by actual data.
      */
@@ -78,7 +78,7 @@ class EmailTemplateManager
      * Replace placeholders with actual data and return content to send in email
      *
      * @param string $content Enail template content with placeholders
-     * @param array $data Associative array of data to replace in the template.
+     * @param array  $data    Associative array of data to replace in the template.
      *
      * @return string placeholder replaced string
      */

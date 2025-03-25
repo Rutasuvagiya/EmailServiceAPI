@@ -13,7 +13,7 @@
 
 namespace App\Strategy;
 
-use App\Strategy\ProviderSelectionStrategy;
+use App\Strategy\Interfaces\ProviderSelectionStrategy;
 use Exception;
 
 /**

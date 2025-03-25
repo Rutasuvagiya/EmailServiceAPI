@@ -29,14 +29,18 @@ class JsonFileProcessor extends JsonProcessor
      */
     public function process(string $filePath)
     {
-        //Fech file content
-        $jsonData = file_get_contents($filePath);
         try {
+
+             //Fech file content
+            $jsonData = file_get_contents($filePath);
+
             //Check if content of file has valid json data or not
             if ($this->validateData($jsonData)) {
                 $queueData = json_decode($jsonData, true);
+
                 //Loop to fetch each record of file and push to Redis queue
                 foreach ($queueData as $email) {
+
                     // Add email task to the queue
                     $this->redis->rpush('email_queue', json_encode($email));
                 }

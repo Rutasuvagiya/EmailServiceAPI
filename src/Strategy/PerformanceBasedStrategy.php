@@ -9,7 +9,7 @@
 
 namespace App\Strategy;
 
-use App\Strategy\ProviderSelectionStrategy;
+use App\Strategy\Interfaces\ProviderSelectionStrategy;
 
 class PerformanceBasedStrategy implements ProviderSelectionStrategy
 {
@@ -33,7 +33,8 @@ class PerformanceBasedStrategy implements ProviderSelectionStrategy
      * This method evaluates the performance of each provider and selects the one
      * with the optimal metrics for handling the current task.
      *
-     * @return mixed The selected service provider instance.
+     * @return array The selected service provider instance.
+     *
      * @throws \Exception If no service providers are available.
      */
     public function selectProvider(): array

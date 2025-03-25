@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 use App\ProviderManager;
 use App\Strategy\RoundRobinStrategy;
 use App\Template\EmailTemplateManager;
+use Exception;
 
 class CronTest extends TestCase
 {
@@ -38,14 +39,14 @@ class CronTest extends TestCase
 
 
     /**
-     * @dataProvider EmailValidData
+     * @dataProvider ValidEmailDataProvider
      */
     public function testSuccessfulEmailSending($to, $data, $templateName)
     {
         $this->assertTrue($this->providerManager->sendEmail($to, $data, $templateName));
     }
 
-    public function EmailValidData()
+    public function ValidEmailDataProvider()
     {
         return [
             [
@@ -114,5 +115,49 @@ class CronTest extends TestCase
 
         $emailService = new ProviderManager($roundRobinStrategy, $this->templateManager);
         $this->assertFalse($emailService->sendEmail("user@example.com", ['name' => 'Corine'], "welcome_email"));
+    }
+
+    public function testExceptionMechanism()
+    {
+
+        $providers = [
+            "sendgrid" => function ($to, $subject, $body) {return false;},
+            "mailgun" => function ($to, $subject, $body) {throw new Exception("server down");},
+            "smtp" => function ($to, $subject, $body) {return true;},
+            "sample1" => function ($to, $subject, $body) {return false;},
+            "sample2" => function ($to, $subject, $body) {return false;},
+            "sample3" => function ($to, $subject, $body) {return true;}
+            
+        ];
+
+        $roundRobinStrategy = new RoundRobinStrategy($providers);
+
+        $emailService = new ProviderManager($roundRobinStrategy, $this->templateManager);
+
+        $this->assertTrue($emailService->sendEmail("user@example.com", ['name' => 'Corine'], "welcome_email"));
+    }
+
+
+
+    public function testEmptyProviderList()
+    {
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage('Array cannot be empty.');
+        $strategy = new RoundRobinStrategy(array());
+    }
+
+    public function testInvalidTemplateFile()
+    {
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage('Template file not found!');
+        $template = new EmailTemplateManager('test');
+    }
+
+    public function testInvalidTemplateName()
+    {
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage('Template not found.');
+        $template = new EmailTemplateManager();
+        $template->renderTemplate('test', []);
     }
 }

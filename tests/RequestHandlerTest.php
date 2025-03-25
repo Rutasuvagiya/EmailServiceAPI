@@ -77,9 +77,9 @@ class RequestHandlerTest extends TestCase
         // Simulate the $_FILES superglobal
         $_FILES = [
             'json_file' => [
-                'name' => 'valid.txt',
-                'type' => 'text/plain',
-                'tmp_name' => __DIR__ . '/valid.txt',
+                'name' => 'validEmailData.json',
+                'type' => 'application/json',
+                'tmp_name' => __DIR__ . '/files/validEmailData.json',
                 'error' => UPLOAD_ERR_OK,
                 'size' => 123,
             ],
@@ -106,9 +106,9 @@ class RequestHandlerTest extends TestCase
         // Simulate the $_FILES superglobal
         $_FILES = [
             'json_file' => [
-                'name' => 'invalid.txt',
-                'type' => 'text/plain',
-                'tmp_name' => __DIR__ . '/invalid.txt',
+                'name' => 'invalid.json',
+                'type' => 'application/json',
+                'tmp_name' => __DIR__ . '/files/invalid.json',
                 'error' => UPLOAD_ERR_OK,
                 'size' => 123,
             ],

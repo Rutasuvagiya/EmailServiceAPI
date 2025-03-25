@@ -17,8 +17,10 @@
         <include>
             <directory suffix=".php">src/</directory>
         </include>
-         <exclude>
-                <file>src/sendMailCron.php</file>
-         </exclude>
+        <exclude>
+            <file>src/sendMailCron.php</file>
+            <file>src/config/providerList.php</file>
+            <file>src/strategy/PerformanceBasedStrategy.php</file>
+        </exclude>
     </coverage>
 </phpunit>

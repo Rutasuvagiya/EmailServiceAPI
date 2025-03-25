@@ -31,6 +31,7 @@ class JsonDataProcessor extends JsonProcessor
     {
         try {
             if ($this->validateData($jsonData)) {
+
                 //Push json data to email queue in Redis
                 $this->redis->rpush('email_queue', $jsonData);
 

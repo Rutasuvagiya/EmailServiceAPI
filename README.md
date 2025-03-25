@@ -2,6 +2,7 @@
 
 An email service API designed to abstract multiple email service providers, support dynamic HTML templates with personalized data, and efficiently handle high volumes of concurrent emails.
 
+
 ## Features
 
 - **Multiple Provider Support** 
@@ -51,7 +52,8 @@ composer install
 
 ## Set Cron/Run file to send Emails
 
-sendMailCron.php file must be run in background to send emails which are in queue. Run multiple crons in background if you want to send bulk mails for faster performance.
+sendMailCron.php file must be run in background to send emails which are in queue.  
+One crom sends around 750 emails per second. Run multiple crons in background if you want to send bulk mails for faster performance.
 1. Run Command prompt  
 2. Run command
 ```bash
@@ -137,4 +139,29 @@ Add new template with dynamic variables defined in {{variable}} with following s
         "subject": "Thank you for subscription, {{name}}",
         "body": "<p>Hi {{name}},</p><p>Thank you for subscribing to {{company}}! Please check your email for confirmation.</p>"
     }
+```
+
+## Running the unit tests
+
+![Screenshot of PHPUnit test run](tests/files/phpunitss.png)
+
+Below command is used to run the unit test:
+```bash
+$ vendor\bin\phpunit tests
+```
+To run unit test for a specific class/method:
+```bash
+$ vendor\bin\phpunit tests --filter "<test class name here>"
+$ vendor\bin\phpunit tests --filter "<test method name here>"
+```
+
+## Generate code coverage report
+
+Code coverage is a metric that can help you understand how much of your source is tested. It's a very useful metric that can help you assess the quality of your test suite.
+
+![Screenshot of code coverage report](coverage-report/reportss.png)
+
+To generate code coverage report
+```bash
+$ vendor\bin\phpunit --coverage-html coverage-report
 ```

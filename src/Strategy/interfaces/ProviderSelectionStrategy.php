@@ -11,7 +11,7 @@
  * @version    1.0.0
  */
 
-namespace App\Strategy;
+namespace App\Strategy\Interfaces;
 
 /**
  * ProviderSelectionStrategy Interface
