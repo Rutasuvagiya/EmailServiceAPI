@@ -137,7 +137,7 @@ Add new template with dynamic variables defined in {{variable}} with following s
 ```bash
 "welcome_email": {
         "subject": "Welcome, {{name}}!",
-        "body": "<p>Dear {{name}},</p><p>Welcome to Our Service! We are excited to have you on board.</p><p>Your company name is: <strong>{{company}}</strong></p><p>Feel free to explore and let us know if you have any questions.</p><p>Best regards,<br> The Team</p>"
+        "body": "<p>Dear {{name}},</p><p>Welcome to Our Service! We are excited to have you on board.</p><p>Your company name is: {{company}}</p><p>Feel free to explore and let us know if you have any questions.</p><p>Best regards,<br> The Team</p>"
     }
 ```
 
@@ -148,7 +148,7 @@ Dear Test User,
 
 Welcome to Our Service! We are excited to have you on board.
 
-Your company name is: **ABC Pvt. Ltd.**
+Your company name is: ABC Pvt. Ltd.
 
 Feel free to explore and let us know if you have any questions.
 
