@@ -20097,3 +20097,15 @@
 2025-03-25 14:16:28 : Welcome, Corine! mail sent failed with max retries
 2025-03-25 14:16:28 : Welcome, Corine! mail sent failed with max retries
 2025-03-25 14:16:28 : Welcome, Corine! mail sent via smtp
+2025-03-27 13:30:54 : Welcome, Corine! mail sent via sendgrid
+2025-03-27 13:30:54 : Reset Your Password, Elsa mail sent via sendgrid
+2025-03-27 13:30:54 : Welcome, Corine! mail sent via smtp
+2025-03-27 13:30:54 : Welcome, Corine! mail sent failed with max retries
+2025-03-27 13:30:54 : Welcome, Corine! mail sent failed with max retries
+2025-03-27 13:30:54 : Welcome, Corine! mail sent via smtp
+2025-03-27 13:36:28 : Welcome, Corine! mail sent via sendgrid
+2025-03-27 13:36:28 : Reset Your Password, Elsa mail sent via sendgrid
+2025-03-27 13:36:28 : Welcome, Corine! mail sent via smtp
+2025-03-27 13:36:28 : Welcome, Corine! mail sent failed with max retries
+2025-03-27 13:36:28 : Welcome, Corine! mail sent failed with max retries
+2025-03-27 13:36:28 : Welcome, Corine! mail sent via smtp

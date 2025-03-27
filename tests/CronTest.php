@@ -166,4 +166,10 @@ class CronTest extends TestCase
         $this->assertFalse($this->providerManager->sendEmail("user@example.com", ['name' => 'Corine'], "invalid"));
     
     }
+    protected function tearDown(): void
+    {
+        unset($this->roundRobinStrategy);
+        unset($this->templateManager);
+        unset($this->providerManager);
+    }
 }

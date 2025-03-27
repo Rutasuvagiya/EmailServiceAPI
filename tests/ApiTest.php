@@ -124,4 +124,9 @@ class ApiTest extends TestCase
         $this->expectExceptionMessage('Invalid input type.');
         JsonProcessorFactory::create('invalid');
     }
+
+    protected function tearDown(): void
+    {
+        unset($this->client);
+    }
 }

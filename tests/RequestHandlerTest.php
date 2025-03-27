@@ -22,6 +22,7 @@ class RequestHandlerTest extends TestCase
     protected function tearDown(): void
     {
         stream_wrapper_restore('php');
+        unset($this->requestHandler);
     }
 
     public function testHandlerWithValidContentType()
