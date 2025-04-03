@@ -78,9 +78,10 @@ HTTP/1.1 200 OK
 ## API with json data in file
 
 ### Request
-```bash
+
 `POST sendEmail`
 
+```bash
     curl -X POST -F "json_file=@C:\tmp\emailQueue.json" http://localhost/emailService/sendEmail.php
 ```
 
